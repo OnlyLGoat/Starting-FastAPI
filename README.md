@@ -12,9 +12,9 @@ This is an ongoing project where I document my progress, starting with basic "He
 
 ### 🎯 Current Progress
 - [x] **Getting Started**: Basic installation and "Hello World" implementation.
-- [ ] **Path & Query Parameters**: Handling user input.
-- [ ] **Request Body & Models**: Using Pydantic for data validation.
-- [ ] **CRUD Operations**: Building a complete API flow.
+- [x] **Path & Query Parameters**: BMI Calculator endpoint with logic.
+- [x] **Request Body & Models**: Using Pydantic for Student data validation.
+- [x] **CRUD Operations**: Complete RESTful API for Student management.
 - [ ] **Database Integration**: Connecting with SQLAlchemy.
 
 ---
@@ -23,6 +23,7 @@ This is an ongoing project where I document my progress, starting with basic "He
 
 - **Language:** [Python 3.8+](https://www.python.org/)
 - **Framework:** [FastAPI](https://fastapi.tiangolo.com/)
+- **Data Validation:** [Pydantic](https://docs.pydantic.dev/)
 - **Server:** [Uvicorn](https://www.uvicorn.org/) (ASGI server)
 - **Documentation:** Built-in Swagger UI and ReDoc.
 
@@ -39,17 +40,22 @@ python --version
 ### 2. Installation
 Install the necessary dependencies:
 ```bash
-pip install fastapi uvicorn
+pip install fastapi uvicorn pydantic
 ```
 
-### 3. Running the "Hello World" App
-To launch the initial API, navigate to the project root and run:
+### 3. Running the Apps
+
+#### A. Basic "Hello World" & BMI Calculator
 ```bash
 python -m uvicorn Getting_Started.Hello:app --reload
 ```
+- **New Feature:** Test the BMI calculator at `/calculate_bmi?weight=70&height=1.75`
 
-- **Interactive API Docs:** [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
-- **Alternative API Docs:** [http://127.0.0.1:8000/redoc](http://127.0.0.1:8000/redoc)
+#### B. RESTful Student API (CRUD)
+```bash
+python -m uvicorn RestFul.main:app --reload
+```
+- **Features:** Full GET, POST, PUT, DELETE operations for student records.
 
 ---
 
@@ -58,8 +64,10 @@ python -m uvicorn Getting_Started.Hello:app --reload
 ```text
 Starting-FastAPI/
 ├── Getting_Started/
-│   ├── Hello.py        # Initial API implementation
+│   ├── Hello.py        # Initial API + BMI Calculator
 │   └── __pycache__/    # Compiled python files
+├── RestFul/
+│   └── main.py         # Students CRUD API (RESTful)
 ├── README.md           # Project documentation
 └── .git/               # Git repository configuration
 ```
