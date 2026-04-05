@@ -81,11 +81,11 @@ FastAPI automatically generates interactive documentation for your API. Once the
 ---
 
 ## 📈 Learning Roadmap
+- [ ] Error handling + validation
+- [ ] JWT Authentication
 - [ ] Dependency Injection
 - [ ] Middleware & CORS
-- [ ] JWT Authentication
 - [ ] Testing with Pytest
-- [ ] Deployment to Production
 
 ---
 
